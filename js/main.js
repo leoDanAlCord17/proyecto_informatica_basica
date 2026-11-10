@@ -27,6 +27,10 @@
       imagen.alt = figura.getAttribute('data-alt') || '';
       imagen.decoding = 'async';
       imagen.addEventListener('load', function () {
+        // El cuadro adopta la proporción real de la foto para que se vea completa
+        if (imagen.naturalWidth && imagen.naturalHeight) {
+          marco.style.aspectRatio = imagen.naturalWidth + ' / ' + imagen.naturalHeight;
+        }
         marco.appendChild(imagen);
         figura.classList.add('foto--cargada');
       });
