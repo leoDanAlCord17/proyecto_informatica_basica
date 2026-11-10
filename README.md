@@ -1,4 +1,4 @@
-# LEO-OS · Página personal de Leo Álvarez
+# leo._.dac · Página personal de Leo Álvarez
 
 Página web personal de una sola página hecha para la materia **Informática Básica** del Instituto Universitario Adventista de Venezuela (IUNAV). Incluye biografía, foto personal, experiencia laboral, tecnologías que uso y mi experiencia en la materia.
 
@@ -46,14 +46,16 @@ Cada imagen tiene un nombre de archivo fijo. Mientras el archivo no exista, la p
 | `img/trabajo-dev.jpg` | Experiencia: Full Stack | Tu puesto de trabajo programando o una captura de una app que hiciste |
 | `img/trabajo-it.jpg` | Experiencia: Soporte IT | Tú trabajando: cableado, rack de red o un equipo abierto |
 | `img/materia.jpg` | Mi experiencia en la materia | Tu juego de memoria con material reciclado o una captura de tus trabajos |
-| `img/setup.jpg` | Galería (foto grande) | Tu escritorio o tu setup |
-| `img/extra-1.jpg` | Galería | Una foto con quien quieras (familia o amigos) |
-| `img/extra-2.jpg` | Galería | Otra foto con quien quieras (familia o amigos) |
+| `img/galeria-1.jpg` | Galería | Tú programando (tu portátil o una pantalla con código) |
+| `img/galeria-2.jpg` | Galería | Tú arreglando un equipo o montando una red |
+| `img/galeria-3.jpg` | Galería | Tú creando videojuegos en Godot o jugando |
+| `img/galeria-4.jpg` | Galería | Tú haciendo algo que te guste en tu tiempo libre |
+| `img/galeria-5.jpg` | Galería | Otra foto tuya haciendo algo que te represente |
 
 Consejos:
 
 - El nombre debe coincidir exactamente, en minúsculas y con extensión `.jpg` (no `.jpeg` ni `.JPG`).
-- La foto de perfil se recorta en formato vertical 4:5; el resto, en horizontal 4:3. Centra bien lo importante.
+- La foto de perfil se recorta en formato vertical 4:5; el resto, en horizontal (4:3 o 16:9 según el tamaño de pantalla). Centra bien lo importante.
 - Para que la página cargue rápido, reduce las fotos a unos 1200 px de ancho como máximo.
 
 ## Mini Leo
@@ -89,13 +91,6 @@ const APARIENCIA = {
 - Hay un **easter egg secreto**. 😉
 
 Con «reducir movimiento» activado en el sistema, Mini Leo se queda quieto, no hay confeti y los diálogos aparecen sin efecto de escritura.
-
-## Fechas pendientes
-
-En la línea de tiempo (sección Biografía, archivo `index.html`) hay dos fechas marcadas como `[----]` para rellenar:
-
-- Técnico Superior Universitario en Informática — Barquisimeto
-- Mudanza a Madrid, España
 
 ## Cómo desplegarla en Vercel
 

@@ -1,5 +1,5 @@
 /* =========================================================
-   LEO-OS · Lógica de la página
+   leo._.dac · Lógica de la página
    ========================================================= */
 (function () {
   'use strict';
@@ -50,8 +50,8 @@
     }
 
     var lineas = [
-      { t: 'LEO-OS BIOS v1.0 · 640 KB de memoria OK', espera: 250 },
-      { t: 'Iniciando LEO-OS v1.0...', espera: 450 },
+      { t: 'leo._.dac BIOS v1.0 · 640 KB de memoria OK', espera: 250 },
+      { t: 'Iniciando leo._.dac v1.0...', espera: 450 },
       { t: 'Cargando módulos:', espera: 200 },
       { t: ' biografía ✓', espera: 230, enLinea: true },
       { t: ' experiencia ✓', espera: 230, enLinea: true },
@@ -278,7 +278,7 @@
       parrafo.className = 'eco';
       var usuario = document.createElement('span');
       usuario.className = 'prompt-usuario';
-      usuario.textContent = 'leo@madrid';
+      usuario.textContent = 'leo._.dac';
       var ruta = document.createElement('span');
       ruta.className = 'prompt-ruta';
       ruta.textContent = ':~$';
@@ -336,7 +336,7 @@
       escribirLinea('comando no encontrado: ' + texto + '. Escribe "help".', 'error');
     }
 
-    escribirLinea('LEO-OS v1.0 — terminal interactiva.', 'tenue');
+    escribirLinea('leo._.dac v1.0 — terminal interactiva.', 'tenue');
     escribirLinea('Escribe "help" para ver los comandos disponibles.', 'tenue');
 
     formulario.addEventListener('submit', function (evento) {

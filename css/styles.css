@@ -1,5 +1,5 @@
 /* =========================================================
-   LEO-OS · Página personal de Leo Álvarez
+   leo._.dac · Página personal de Leo Álvarez
    Estética: terminal retro / CRT + pixel art
    ========================================================= */
 
@@ -1011,15 +1011,23 @@ main:focus { outline: none; }
   gap: 28px;
 }
 
+.galeria__intro { margin-bottom: 28px; color: var(--gris); }
+
+/* Tablet: la primera foto a todo el ancho y las otras 4 en dos columnas */
 @media (min-width: 600px) {
   .galeria { grid-template-columns: 1fr 1fr; }
-  .galeria__principal { grid-column: 1 / -1; }
+  .galeria .foto:first-child { grid-column: 1 / -1; }
+  .galeria .foto:first-child .foto__marco { aspect-ratio: 16 / 9; }
 }
 
+/* Escritorio: 3 fotos arriba y 2 más anchas abajo */
 @media (min-width: 1024px) {
-  .galeria { grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; }
-  .galeria__principal { grid-column: 1; grid-row: 1 / span 2; }
-  .galeria__principal .foto__marco { aspect-ratio: auto; height: calc(100% - 8px); min-height: 320px; }
+  .galeria { grid-template-columns: repeat(6, 1fr); }
+  .galeria .foto { grid-column: span 2; }
+  .galeria .foto:first-child { grid-column: span 2; }
+  .galeria .foto:first-child .foto__marco { aspect-ratio: 4 / 3; }
+  .galeria .foto:nth-child(n + 4) { grid-column: span 3; }
+  .galeria .foto:nth-child(n + 4) .foto__marco { aspect-ratio: 16 / 9; }
 }
 
 .galeria .foto__marco { transition: transform 0.08s steps(2), box-shadow 0.08s steps(2); }

@@ -73,7 +73,7 @@
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
   <!-- Pantalla de arranque -->
-  <div class="arranque" id="arranque" role="dialog" aria-modal="true" aria-label="Pantalla de arranque de LEO-OS">
+  <div class="arranque" id="arranque" role="dialog" aria-modal="true" aria-label="Pantalla de arranque de leo._.dac">
     <div class="arranque__pantalla">
       <pre class="arranque__texto" id="arranque-texto" aria-live="polite"></pre>
       <p class="arranque__saltar">Pulsa cualquier tecla o haz clic para saltar</p>
@@ -82,8 +82,8 @@
 
   <header class="cabecera" id="cabecera">
     <div class="cabecera__contenido">
-      <a class="logo" href="#inicio" aria-label="LEO-OS, volver al inicio">
-        <span class="logo__cuadro" aria-hidden="true"></span>LEO-OS
+      <a class="logo" href="#inicio" aria-label="leo._.dac, volver al inicio">
+        <span class="logo__cuadro" aria-hidden="true"></span>leo._.dac
       </a>
       <button class="hamburguesa" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
         <span class="hamburguesa__barras" aria-hidden="true"></span>
@@ -117,8 +117,8 @@
         </figure>
 
         <div class="hero__texto">
-          <p class="hero__prompt" aria-label="leo@madrid:~$ whoami">
-            <span class="prompt-usuario" aria-hidden="true">leo@madrid</span><span class="prompt-ruta" aria-hidden="true">:~$</span>
+          <p class="hero__prompt" aria-label="leo._.dac:~$ whoami">
+            <span class="prompt-usuario" aria-hidden="true">leo._.dac</span><span class="prompt-ruta" aria-hidden="true">:~$</span>
             <span class="escritura" data-escribir aria-hidden="true">whoami</span>
           </p>
           <h1 class="hero__nombre" id="hero-nombre">
@@ -204,9 +204,9 @@
         <div class="ventana revelar">
           <div class="ventana__barra"><span class="ventana__botones" aria-hidden="true"></span><span class="ventana__titulo">tail trayectoria.log</span></div>
           <ol class="ventana__cuerpo registro">
-            <li><span class="registro__fecha">[----]</span> <span class="registro__evento">Técnico Superior Universitario en Informática — Barquisimeto</span></li>
+            <li><span class="registro__fecha">[ene 2022 – dic 2024]</span> <span class="registro__evento">Técnico Superior Universitario en Informática — Nirgua, Venezuela</span></li>
             <li><span class="registro__fecha">[nov 2024 – nov 2025]</span> <span class="registro__evento">Desarrollador Full Stack — Barquisimeto, Venezuela</span></li>
-            <li><span class="registro__fecha">[----]</span> <span class="registro__evento">Mudanza a Madrid, España</span></li>
+            <li><span class="registro__fecha">[dic 2025]</span> <span class="registro__evento">Mudanza a Madrid, España</span></li>
             <li><span class="registro__fecha">[jul 2026 – actualidad]</span> <span class="registro__evento">Mantenimiento y soporte IT / redes — Torrejón de Ardoz, Madrid</span></li>
             <li class="registro__actual"><span class="registro__fecha">[actualidad]</span> <span class="registro__evento">Estudiante de Ingeniería en Informática — IUNAV</span></li>
           </ol>
@@ -387,32 +387,50 @@
         <p class="seccion__comando" aria-hidden="true"><span>$ cd ~/galería</span></p>
         <h2 class="seccion__titulo" id="titulo-galeria">Galería</h2>
 
+        <p class="galeria__intro revelar">Cosas que hago y que me representan.</p>
         <div class="galeria">
-          <figure class="foto galeria__principal revelar" data-foto="img/setup.jpg" data-alt="Escritorio y setup de trabajo de Leo Álvarez">
+          <figure class="foto revelar" style="--i:0" data-foto="img/galeria-1.jpg" data-alt="Leo Álvarez programando">
             <div class="foto__marco">
               <div class="foto__placeholder">
                 <svg class="foto__icono" aria-hidden="true" focusable="false"><use href="#i-camara"/></svg>
-                <p class="foto__texto">📷 Aquí va: tu escritorio o tu setup</p>
-                <code class="foto__archivo">img/setup.jpg</code>
-              </div>
-            </div>
-            <figcaption class="foto__pie">Mi setup</figcaption>
-          </figure>
-          <figure class="foto revelar" data-foto="img/extra-1.jpg" data-alt="Leo Álvarez con personas cercanas">
-            <div class="foto__marco">
-              <div class="foto__placeholder">
-                <svg class="foto__icono" aria-hidden="true" focusable="false"><use href="#i-camara"/></svg>
-                <p class="foto__texto">📷 Aquí va: una foto con quien quieras (familia o amigos)</p>
-                <code class="foto__archivo">img/extra-1.jpg</code>
+                <p class="foto__texto">📷 Aquí va: tú programando (tu portátil o una pantalla con código)</p>
+                <code class="foto__archivo">img/galeria-1.jpg</code>
               </div>
             </div>
           </figure>
-          <figure class="foto revelar" data-foto="img/extra-2.jpg" data-alt="Leo Álvarez con familia o amigos">
+          <figure class="foto revelar" style="--i:1" data-foto="img/galeria-2.jpg" data-alt="Leo Álvarez arreglando equipos y redes">
             <div class="foto__marco">
               <div class="foto__placeholder">
                 <svg class="foto__icono" aria-hidden="true" focusable="false"><use href="#i-camara"/></svg>
-                <p class="foto__texto">📷 Aquí va: otra foto con quien quieras (familia o amigos)</p>
-                <code class="foto__archivo">img/extra-2.jpg</code>
+                <p class="foto__texto">📷 Aquí va: tú arreglando un equipo o montando una red</p>
+                <code class="foto__archivo">img/galeria-2.jpg</code>
+              </div>
+            </div>
+          </figure>
+          <figure class="foto revelar" style="--i:2" data-foto="img/galeria-3.jpg" data-alt="Leo Álvarez creando videojuegos">
+            <div class="foto__marco">
+              <div class="foto__placeholder">
+                <svg class="foto__icono" aria-hidden="true" focusable="false"><use href="#i-camara"/></svg>
+                <p class="foto__texto">📷 Aquí va: tú creando videojuegos en Godot o jugando</p>
+                <code class="foto__archivo">img/galeria-3.jpg</code>
+              </div>
+            </div>
+          </figure>
+          <figure class="foto revelar" style="--i:3" data-foto="img/galeria-4.jpg" data-alt="Leo Álvarez en su tiempo libre">
+            <div class="foto__marco">
+              <div class="foto__placeholder">
+                <svg class="foto__icono" aria-hidden="true" focusable="false"><use href="#i-camara"/></svg>
+                <p class="foto__texto">📷 Aquí va: tú haciendo algo que te guste en tu tiempo libre</p>
+                <code class="foto__archivo">img/galeria-4.jpg</code>
+              </div>
+            </div>
+          </figure>
+          <figure class="foto revelar" style="--i:4" data-foto="img/galeria-5.jpg" data-alt="Leo Álvarez haciendo algo que lo representa">
+            <div class="foto__marco">
+              <div class="foto__placeholder">
+                <svg class="foto__icono" aria-hidden="true" focusable="false"><use href="#i-camara"/></svg>
+                <p class="foto__texto">📷 Aquí va: otra foto tuya haciendo algo que te represente</p>
+                <code class="foto__archivo">img/galeria-5.jpg</code>
               </div>
             </div>
           </figure>
@@ -437,12 +455,12 @@
         <h3 class="subtitulo" id="titulo-terminal">Terminal interactiva</h3>
         <p class="terminal__ayuda">Escribe <code>help</code> para ver los comandos. También puedes pulsar <kbd>~</kbd> en cualquier momento para venir aquí.</p>
         <div class="ventana terminal" id="terminal">
-          <div class="ventana__barra"><span class="ventana__botones" aria-hidden="true"></span><span class="ventana__titulo">leo@madrid: ~</span></div>
+          <div class="ventana__barra"><span class="ventana__botones" aria-hidden="true"></span><span class="ventana__titulo">leo._.dac: ~</span></div>
           <div class="ventana__cuerpo terminal__cuerpo" id="terminal-cuerpo">
             <div class="terminal__salida" id="terminal-salida" role="log" aria-live="polite" aria-labelledby="titulo-terminal"></div>
             <form class="terminal__linea" id="terminal-formulario" autocomplete="off">
               <label class="sr-only" for="terminal-entrada">Escribe un comando</label>
-              <span class="prompt-usuario" aria-hidden="true">leo@madrid</span><span class="prompt-ruta" aria-hidden="true">:~$</span>
+              <span class="prompt-usuario" aria-hidden="true">leo._.dac</span><span class="prompt-ruta" aria-hidden="true">:~$</span>
               <input class="terminal__entrada" id="terminal-entrada" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="send">
             </form>
           </div>
