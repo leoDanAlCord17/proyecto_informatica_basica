@@ -230,6 +230,8 @@
         '  stack     tecnologías que uso',
         '  materia   mi experiencia en Informática Básica',
         '  contacto  dónde encontrarme',
+        '  leo       Mini Leo se pone a bailar',
+        '  dormir    Mini Leo se echa una siesta',
         '  clear     limpia la pantalla'
       ],
       whoami: ['Leo Álvarez — Desarrollador Full Stack'],
@@ -309,6 +311,23 @@
         return;
       }
 
+      if (comando === 'leo' || comando === 'dormir') {
+        var miniLeo = window.MiniLeo;
+        if (!miniLeo) {
+          escribirLinea('Mini Leo no está disponible ahora mismo.', 'error');
+          return;
+        }
+        var resultado = comando === 'leo' ? miniLeo.bailar() : miniLeo.dormir();
+        if (resultado === 'oculto') {
+          escribirLinea('Mini Leo está oculto. Pulsa [mostrar a Leo] en la barra inferior.', 'error');
+        } else if (comando === 'leo') {
+          escribirLinea(resultado === 'quieto' ? 'Mini Leo quiere bailar, pero respeta tu preferencia de movimiento reducido.' : 'Mini Leo se pone a bailar. ♪');
+        } else {
+          escribirLinea('Mini Leo se ha quedado dormido. Mueve el ratón o haz scroll para despertarlo.');
+        }
+        return;
+      }
+
       if (Object.prototype.hasOwnProperty.call(comandos, comando)) {
         comandos[comando].forEach(function (linea) { escribirLinea(linea); });
         return;
@@ -378,6 +397,9 @@
   iniciarNavegacion();
   iniciarTerminal();
   arrancar().then(function () {
+    // Aviso para Mini Leo (js/leo.js): ya terminó el arranque
+    window.LEOOS_LISTO = true;
+    document.dispatchEvent(new CustomEvent('leoos:listo'));
     escribirHero();
     iniciarRevelado();
   });

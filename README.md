@@ -12,7 +12,9 @@ Está hecha a mano con **HTML, CSS y JavaScript puro**: sin frameworks, sin depe
 index.html       Página principal
 favicon.svg      Icono pixel art de la pestaña
 css/styles.css   Estilos
+css/leo.css      Estilos de Mini Leo y su franja
 js/main.js       Arranque, escritura, menú, animaciones, fotos y terminal
+js/leo.js        Mini Leo: sprite, animaciones y reacciones
 img/             Aquí van las fotos (ver tabla)
 ```
 
@@ -53,6 +55,40 @@ Consejos:
 - El nombre debe coincidir exactamente, en minúsculas y con extensión `.jpg` (no `.jpeg` ni `.JPG`).
 - La foto de perfil se recorta en formato vertical 4:5; el resto, en horizontal 4:3. Centra bien lo importante.
 - Para que la página cargue rápido, reduce las fotos a unos 1200 px de ancho como máximo.
+
+## Mini Leo
+
+Mini Leo es un pequeño personaje pixel art que vive en la franja inferior de la pantalla y acompaña el recorrido. Se dibuja con código en un `<canvas>` a partir de matrices de píxeles (archivos `js/leo.js` y `css/leo.css`).
+
+### Cambiar su aspecto
+
+Al principio de `js/leo.js` está el objeto `APARIENCIA`. Cambia los colores (formato `#rrggbb`) y las opciones, guarda y recarga la página:
+
+```js
+const APARIENCIA = {
+  piel: '#c68a5e',      // tono de piel (las sombras se calculan solas)
+  pelo: '#1a1110',      // color del pelo (también se usa para la barba)
+  camiseta: '#39ff7a',  // verde fósforo de la página
+  pantalon: '#2b3a55',  // color del pantalón
+  zapatos: '#111111',   // color de los zapatos
+  lentes: false,        // true para dibujar lentes
+  barba: false,         // true para dibujar barba
+};
+```
+
+### Qué hace
+
+- **Camina con el scroll**: su posición va de izquierda a derecha según lo que hayas bajado en la página, y vuelve a reposo al dejar de hacer scroll.
+- **Barra de XP y niveles**: la barra se llena con el progreso y sube de nivel con cada sección nueva (`+LVL UP!`).
+- **Reacciones por sección**: la primera vez que llegas a cada sección hace una acción (saludar, escribir en su portátil, celebrar…) y dice algo en un bocadillo. En el logro «Página web» hay lluvia de confeti.
+- **Clic o toque**: salta y dice una frase al azar. Si le insistes varias veces seguidas, se enfada un poco… Tocar el bocadillo lo cierra.
+- **Inactividad**: si no haces nada durante 12 segundos se duerme; al volver a moverte, despierta.
+- **Ojos que siguen al cursor** en escritorio.
+- **Terminal**: los comandos `leo` (baila) y `dormir` (se duerme).
+- **Botones de la franja**: `[ocultar a Leo]` / `[mostrar a Leo]` y 🔇/🔊 para activar sonidos chiptune generados con Web Audio API. Ambas opciones se recuerdan en el navegador; el sonido viene apagado por defecto.
+- Hay un **easter egg secreto**. 😉
+
+Con «reducir movimiento» activado en el sistema, Mini Leo se queda quieto, no hay confeti y los diálogos aparecen sin efecto de escritura.
 
 ## Fechas pendientes
 

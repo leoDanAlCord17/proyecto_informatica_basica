@@ -1,0 +1,281 @@
+/* =========================================================
+   Mini Leo · estilos del personaje y su franja
+   ========================================================= */
+
+/* El contenido nunca queda tapado por la franja */
+body { padding-bottom: var(--alto-leo, 0px); }
+html { scroll-padding-bottom: var(--alto-leo, 0px); }
+
+/* El aviso de logro sube por encima de la franja */
+.aviso-logro { bottom: calc(var(--alto-leo, 0px) + 16px); }
+
+.leo-franja {
+  --alto-hud: 38px;
+  --alto-sprite: 102px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 750;
+  height: var(--alto-leo, 0px);
+  pointer-events: none;
+}
+
+.leo-franja--esperando,
+.con-arranque .leo-franja { display: none; }
+
+/* ---------- Personaje ---------- */
+.leo {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--alto-hud) - 2px);
+  will-change: transform;
+}
+
+.leo-franja--oculto .leo,
+.leo-franja--oculto .leo-sombra,
+.leo-franja--oculto .leo-bocadillo { display: none; }
+
+.leo__boton {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.leo__lienzo {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transform-origin: 50% 60%;
+  filter: drop-shadow(0 0 3px rgba(57, 255, 122, 0.55));
+}
+
+.leo-sombra {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--alto-hud) - 4px);
+  width: calc(var(--alto-sprite) * 0.45);
+  height: 6px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 -2px 0 0 rgba(0, 0, 0, 0.35);
+  transform-origin: 50% 50%;
+}
+
+/* ---------- Suelo y HUD ---------- */
+.leo-hud {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--alto-hud);
+  padding: 0 16px;
+  background: var(--fondo);
+  pointer-events: auto;
+}
+
+.leo-hud::before {
+  /* suelo pixelado */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -4px;
+  height: 4px;
+  background:
+    repeating-linear-gradient(90deg, var(--verde-oscuro) 0 8px, var(--panel-2) 8px 12px, var(--verde-oscuro) 12px 20px, #12301f 20px 24px);
+}
+
+.leo-hud__nivel {
+  flex: none;
+  font-family: var(--fuente-pixel);
+  font-size: 0.55rem;
+  line-height: 1;
+  color: var(--ambar);
+  text-shadow: var(--brillo-ambar);
+}
+
+.leo-hud__xp {
+  position: relative;
+  flex: 1;
+  max-width: 320px;
+  height: 10px;
+  margin: 0 3px;
+  background: var(--panel);
+  box-shadow: 0 -3px 0 0 var(--borde), 0 3px 0 0 var(--borde), -3px 0 0 0 var(--borde), 3px 0 0 0 var(--borde);
+}
+
+.leo-hud__relleno {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, var(--verde) 0 6px, var(--verde-oscuro) 6px 8px);
+  box-shadow: var(--brillo);
+}
+
+.leo-hud__xp.destello { animation: leo-destello 0.6s steps(3) 1; }
+
+@keyframes leo-destello {
+  0%, 100% { background: var(--panel); }
+  50% { background: #f2f2f2; }
+}
+
+.leo-hud__boton {
+  flex: none;
+  padding: 4px 8px;
+  font-family: var(--fuente-terminal);
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--texto);
+  background: var(--panel-2);
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 -2px 0 0 var(--borde), 0 2px 0 0 var(--borde), -2px 0 0 0 var(--borde), 2px 0 0 0 var(--borde);
+  transition: transform 0.08s steps(2);
+}
+
+.leo-hud__boton:hover { color: var(--verde); transform: translateY(-2px); }
+.leo-hud__sonido { margin-left: auto; min-width: 36px; }
+
+@media (max-width: 767px) {
+  .leo-hud { gap: 10px; padding: 0 12px; }
+  .leo-hud__nivel { font-size: 0.5rem; }
+  .leo-hud__boton { font-size: 1.05rem; padding: 3px 6px; }
+}
+
+/* ---------- Bocadillo ---------- */
+.leo-bocadillo {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--alto-hud) + var(--alto-sprite) + 10px);
+  width: max-content;
+  max-width: min(280px, calc(100vw - 32px));
+  padding: 10px 12px;
+  font-family: var(--fuente-terminal);
+  font-size: 1.3rem;
+  line-height: 1.15;
+  color: var(--texto);
+  background: var(--panel);
+  box-shadow: 0 -3px 0 0 var(--verde), 0 3px 0 0 var(--verde), -3px 0 0 0 var(--verde), 3px 0 0 0 var(--verde), 6px 6px 0 0 rgba(0, 0, 0, 0.55);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.leo-bocadillo.visible { visibility: visible; opacity: 1; pointer-events: auto; cursor: pointer; }
+
+.leo-bocadillo__texto { display: block; min-height: 1.15em; }
+
+.leo-bocadillo__cola {
+  position: absolute;
+  bottom: -9px;
+  left: 20px;
+  width: 6px;
+  height: 6px;
+  background: var(--verde);
+  box-shadow: 3px 3px 0 0 var(--verde);
+}
+
+@media (max-width: 767px) {
+  .leo-bocadillo { max-width: min(220px, calc(100vw - 32px)); font-size: 1.15rem; padding: 8px 10px; }
+}
+
+/* ---------- Zetas, nivel y confeti ---------- */
+.leo__zetas {
+  position: absolute;
+  left: 60%;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.leo__zeta {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--fuente-pixel);
+  font-size: 0.7rem;
+  color: var(--texto);
+  text-shadow: var(--brillo);
+  animation: leo-zeta 2.4s steps(12) forwards;
+}
+
+.leo__zetas--estatico {
+  font-family: var(--fuente-pixel);
+  font-size: 0.6rem;
+  color: var(--texto);
+  white-space: nowrap;
+  transform: translateY(-14px);
+}
+
+@keyframes leo-zeta {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translate(26px, -48px) scale(1.2); }
+}
+
+.leo__nivel-flotante {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  font-family: var(--fuente-pixel);
+  font-size: 0.6rem;
+  white-space: nowrap;
+  color: var(--ambar);
+  text-shadow: var(--brillo-ambar), 2px 2px 0 #000;
+  pointer-events: none;
+  transform: translateX(-50%);
+  animation: leo-nivel 1.3s steps(10) forwards;
+}
+
+@keyframes leo-nivel {
+  0% { opacity: 0; transform: translate(-50%, 6px); }
+  15% { opacity: 1; color: #fff; }
+  30% { color: var(--ambar); }
+  100% { opacity: 0; transform: translate(-50%, -40px); }
+}
+
+.leo-confeti {
+  position: fixed;
+  inset: 0;
+  z-index: 860;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.leo-confeti span {
+  position: absolute;
+  top: -12px;
+  animation-name: leo-caer;
+  animation-timing-function: steps(28);
+  animation-fill-mode: forwards;
+}
+
+@keyframes leo-caer {
+  to { transform: translate(var(--dx), 105vh) rotate(var(--giro)); }
+}
+
+/* ---------- Modo secreto: paleta ámbar temporal ---------- */
+.tema-ambar {
+  --verde: #ffb000;
+  --verde-oscuro: #8a5c00;
+  --ambar: #ffe08a;
+  --brillo: 0 0 6px rgba(255, 176, 0, 0.5);
+  --brillo-ambar: 0 0 6px rgba(255, 224, 138, 0.45);
+}
+
+.tema-ambar .leo__lienzo { filter: drop-shadow(0 0 3px rgba(255, 176, 0, 0.6)); }
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .leo__nivel-flotante,
+  .leo-hud__xp.destello { animation-name: none; }
+  .leo__zeta { display: none; }
+}
