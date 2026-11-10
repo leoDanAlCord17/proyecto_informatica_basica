@@ -1062,6 +1062,13 @@ main:focus { outline: none; }
 
 .contacto p { margin: 0; }
 
+.contacto__enlaces { display: flex; flex-wrap: wrap; gap: 12px 16px; }
+
+@media (max-width: 479px) {
+  .contacto { padding: 20px 16px; }
+  .contacto__enlaces .boton { font-size: 0.5rem; padding: 12px 14px; overflow-wrap: normal; }
+}
+
 .terminal__ayuda { color: var(--gris); font-size: 0.9rem; }
 .terminal__ayuda code { color: var(--verde); }
 

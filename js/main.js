@@ -305,13 +305,18 @@
       }
 
       if (comando === 'contacto') {
-        escribirLinea('GitHub:');
-        var enlace = document.createElement('a');
-        enlace.href = 'https://github.com/leoDanAlCord17';
-        enlace.target = '_blank';
-        enlace.rel = 'noopener noreferrer';
-        enlace.textContent = 'https://github.com/leoDanAlCord17';
-        escribirLinea(enlace);
+        [
+          ['GitHub:', 'https://github.com/leoDanAlCord17'],
+          ['Instagram (@leo._.dac):', 'https://www.instagram.com/leo._.dac/']
+        ].forEach(function (red) {
+          escribirLinea(red[0]);
+          var enlace = document.createElement('a');
+          enlace.href = red[1];
+          enlace.target = '_blank';
+          enlace.rel = 'noopener noreferrer';
+          enlace.textContent = red[1];
+          escribirLinea(enlace);
+        });
         return;
       }
 

@@ -65,6 +65,9 @@
     <symbol id="i-trofeo" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M3 1h10v2h2v4h-1v1h-2v1h-1v1H9v2h2v1h1v2H4v-2h1v-1h2v-2H5V9H4V8H2V7H1V3h2zM2 4h1v3H2zM13 4h1v3h-1z"/>
     </symbol>
+    <symbol id="i-instagram" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M3 1h10v1h1v1h1v10h-1v1h-1v1H3v-1H2v-1H1V3h1V2h1zM3 3h10v10H3zM6 5h4v1h1v4h-1v1H6v-1H5V6h1zM7 7h2v2H7zM11 4h1v1h-1z"/>
+    </symbol>
     <symbol id="i-github" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M5 1h6v1h2v1h1v2h1v6h-1v2h-1v1h-2v1H9v-3h1v-1h1v-1h1V7h-1V5h-1v1H9V5H7v1H6V5H5v2H4v3h1v1h1v1h1v1H5v-1H3v1h1v1h1v1h2v1H5v-1H3v-1H2v-2H1V5h1V3h1V2h2z"/>
     </symbol>
@@ -387,7 +390,7 @@
         <p class="seccion__comando" aria-hidden="true"><span>$ cd ~/galería</span></p>
         <h2 class="seccion__titulo" id="titulo-galeria">Galería</h2>
 
-        <p class="galeria__intro revelar">Cosas que hago y que me representan.</p>
+        <p class="galeria__intro revelar">.</p>
         <div class="galeria">
           <figure class="foto revelar" style="--i:0" data-foto="img/galeria-1.jpg" data-alt="Leo Álvarez programando">
             <div class="foto__marco">
@@ -445,11 +448,17 @@
         <h2 class="seccion__titulo" id="titulo-contacto">Contacto</h2>
 
         <div class="contacto revelar">
-          <p>¿Quieres ver mis proyectos? Encuéntrame en GitHub:</p>
-          <a class="boton boton--icono" href="https://github.com/leoDanAlCord17" target="_blank" rel="noopener noreferrer">
-            <svg class="icono-pixel" aria-hidden="true" focusable="false"><use href="#i-github"/></svg>
-            github.com/leoDanAlCord17<span class="sr-only"> (se abre en una pestaña nueva)</span>
-          </a>
+          <p>¿Quieres ver mis proyectos o seguirme? Encuéntrame aquí:</p>
+          <div class="contacto__enlaces">
+            <a class="boton boton--icono" href="https://github.com/leoDanAlCord17" target="_blank" rel="noopener noreferrer">
+              <svg class="icono-pixel" aria-hidden="true" focusable="false"><use href="#i-github"/></svg>
+              github.com/leoDanAlCord17<span class="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
+            <a class="boton boton--fantasma boton--icono" href="https://www.instagram.com/leo._.dac/" target="_blank" rel="noopener noreferrer">
+              <svg class="icono-pixel" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg>
+              <span><span class="sr-only">Instagram: </span>@leo._.dac</span><span class="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
+          </div>
         </div>
 
         <h3 class="subtitulo" id="titulo-terminal">Terminal interactiva</h3>
