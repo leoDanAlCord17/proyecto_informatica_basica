@@ -250,7 +250,8 @@
       stack: [
         'Móvil ........... Flutter, Dart, go_router',
         'Web ............. React, Vite, TypeScript, PWA',
-        'Backend y datos . Python, Supabase',
+        'Backend y datos . Python, Java, PHP, Laravel, Supabase',
+        'Escritorio ...... Delphi, Pascal',
         'Otros ........... Godot (videojuegos), extensiones de VS Code',
         'Infraestructura . redes, cableado estructurado, soporte de hardware y software'
       ],
